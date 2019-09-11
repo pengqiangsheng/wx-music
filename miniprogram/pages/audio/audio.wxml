@@ -1,0 +1,62 @@
+<view class="page-body" wx:if="{{currentSong}}">
+  <view class="background">
+    <image src="{{currentSong.al.picUrl}}"></image>
+  </view>
+  <view class="top">
+    <view class="title">{{currentSong.name}}</view>
+    <view class="subtitle">{{currentSong.ar[0].name}}</view>
+  </view>
+  <view class="middle">
+    <view class="middle-l">
+      <view class="cd-wrapper">
+        <view class="cd" id="cd">
+          <image class="{{ play ? 'play cd-image' : 'pause cd-image' }}" src="{{currentSong.al.picUrl}}"></image>
+        </view>
+      </view>
+      <view class="lyric-wrapper">
+        <text>{{txt}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="progress-container">
+
+      <text class="progress-text">{{start}}</text>
+      <view class="progress" bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'>
+        <progress-bar width="{{left}}"></progress-bar>
+      </view>
+      <text  class="progress-text">{{end}}</text>
+    </view>
+    <view class="operators">
+      <label class="iconfont btn-item {{playMode ? 'iconicon-- bigger' : 'iconicon_loop'}}" bindtap="changeMode"></label>
+      <label class="iconfont iconshangyishoushangyige btn-item" bindtap="prev"></label>
+      <label class="{{play? 'iconfont iconplus-pause btn-item big-btn-item' : 'iconfont iconbofang btn-item big-btn-item'}}" bindtap="audioPlay"></label>
+      <label class="iconfont iconxiayigexiayishou btn-item"  bindtap="next"></label>
+      <label class="iconfont iconbofangliebiao btn-item" bindtap="showPlayList"></label>
+    </view>
+    
+  </view>
+  <view class="model-play-list" wx:if="{{listShow}}" animation="{{animationParent}}">
+    <view class="top" bindtap="hidePlayList"></view>
+    <view class="play-list" animation="{{animation}}">
+      <view class="play-list-header">
+        <view class="play-btn">
+          <label class="iconfont iconicon_loop"></label>
+          Loop all
+        </view>
+        <view class="fav-btn" bindtap="favPlayList">
+          <label class="iconfont iconFilefavorite"></label>
+          Fav all
+        </view>
+        <view class="del-btn" bindtap="clearPlayList">
+          <label class="iconfont icondelete"></label>
+        </view>
+      </view>
+      <scroll-view  scroll-y style="height: calc(100% - 40px);">
+        <my-list list="{{songList}}" playIndex="{{index}}" mode="{{3}}"  bind:handleTap="playSong" bind:handleDel="handleDel">
+        </my-list>
+      </scroll-view>
+    </view>
+  </view>
+ 
+</view>

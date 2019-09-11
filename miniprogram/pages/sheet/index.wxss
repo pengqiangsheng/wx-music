@@ -1,0 +1,49 @@
+page {
+  background: rgb(245, 245, 245);
+}
+
+.sheet-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 10px 10px 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.header-wrapper {
+  position: fixed;
+  width: calc(100% - 20px);
+  padding-bottom: 10px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgb(245, 245, 245);
+  border-bottom: 1px #eee solid;
+}
+
+.item {
+  width: 20%;
+  text-align: center;
+}
+.header-wrapper > .active::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background: #1296db;
+  border-radius: 2rpx;
+  width: 50rpx;
+  height: 6rpx;
+}
+.body-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 80rpx;
+}
+
+.loading {
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 20px;
+  color: rgba(0, 0, 0, 0.8)
+}

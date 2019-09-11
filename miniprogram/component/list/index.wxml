@@ -1,0 +1,43 @@
+<view class="list-wrapper">
+  <view class="list-item" wx:if="{{mode===1}}" bindtap="handleTap" wx:for="{{list}}"  wx:key="index" wx:for-item="item" data-index="{{index}}" data-item="{{item}}">
+    <view class="item-left">{{index + 1}}</view>
+    <view class="item-right">
+      <view class="item-context">
+        <view class="item-name">{{item.name}}</view>
+        <view class="item-ar">{{item.ar[0].name}}</view>
+      </view>
+      <view class="item-btn">
+        <view class="item-play">
+          <label class="iconfont {{playIndex !== index ? 'iconbofang' : 'iconplus-pause'}}" catchtap="handlePlay" data-index="{{index}}" data-item="{{item}}"></label>
+        </view>
+        <view class="item-action" catchtap="handleMutil" data-index="{{index}}" data-item="{{item}}">
+          <view class="action-point"></view>
+          <view class="action-point" ></view>
+          <view class="action-point"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="song-wrapper" wx:if="{{mode===2}}">
+    <view class="song-item" wx:for="{{list}}" bindtap="handleTap"  wx:key="index" wx:for-item="item" data-index="{{index}}" data-item="{{item}}">
+      <view class="song-image">
+        <image src="{{item.al.picUrl}}?param=50y50"></image>
+      </view>
+      <view class="song-text">
+        <view class="text-high">{{item.name}}</view>
+        <view class="text">{{item.ar[0].name}}</view>
+        <label class="song-right"></label>
+      </view>
+    </view>
+  </view>
+  <view class="play-list-item {{playIndex === index ? 'high-line' : ''}}" wx:if="{{mode===3}}" bindtap="handleTap" wx:for="{{list}}"  wx:key="index" wx:for-item="item" data-index="{{index}}" data-item="{{item}}">
+    <view class="item">
+      <label class="item-name">{{item.name}}</label>
+      <label class="item-ar">{{item.ar[0].name}}</label>
+    </view>
+    <view class="btn" catchtap="handleDel" data-index="{{index}}" data-item="{{item}}">
+      <label class="iconfont iconclear"></label>
+    </view>
+  </view>
+  <slot></slot>
+</view>

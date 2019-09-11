@@ -1,0 +1,195 @@
+@import '../../style/iconfont.wxss';
+
+
+.list-wrapper {
+  position: relative;
+  width: 100%;
+}
+.list-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+
+.item-left {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  font-size: 12px;
+  color: rgba(0, 0, 0,.4);
+}
+.item-right {
+  position: relative;
+  display: flex;
+  flex: 9;
+  margin-right: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.item-context {
+  flex: 5;
+}
+.item-name {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 4px;
+}
+.item-ar {
+  font-size: 10px;
+  color: rgba(0, 0, 0,.4);
+  margin-bottom: 4px;
+}
+
+
+
+.item-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1
+}
+.item-play {
+  flex: 1;
+  margin-right: 20px;
+}
+.item-play > .iconfont {
+  font-size: 22px;
+  color: rgba(0, 0, 0,.8);
+}
+.item-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 20px;
+}
+
+.action-point {
+  width: 3px;
+  height: 3px;
+  background-color: rgba(0, 0, 0,.4);
+  border-radius: 50%;
+  margin: 2px 0;
+}
+
+
+.song-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.song-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.song-image {
+  flex: 1;
+  height: 50px;
+}
+.song-image > image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.song-text {
+  flex: 5;
+  margin-left: 10px;
+}
+.song-right {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid rgb(141, 141, 141);
+  border-right: 2px solid rgb(141, 141, 141);
+  transform: rotate(45deg);
+}
+
+.text-high {
+  position: relative;
+  width: 500rpx;
+  font-size: 28rpx;
+  color: rgb(24, 2, 2);
+  margin: 10rpx 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+.text-high-hot {
+  position: relative;
+  width: 100%;
+  font-size: 28rpx;
+  color: rgb(24, 2, 2);
+  margin: 10rpx 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.text {
+  position: relative;
+  width: 100%;
+  font-size: 24rpx;
+  color: rgba(46, 4, 4, 0.3);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.play-list-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.play-list-item > .item {
+  position: relative;
+  display: flex;
+  flex: 9;
+  margin-right: 10px;
+}
+.play-list-item > .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.play-list-item > .btn > .iconfont {
+  font-size: 18px;
+  margin-left: auto;
+  color: rgba(0, 0, 0,.4);
+}
+.play-list-item > .item > .item-name {
+  margin: 0;
+}
+.play-list-item > .item > .item-ar {
+  position: relative;
+  left: 5px;
+  bottom: -4px;
+  margin: 0;
+}
+
+.high-line {
+  color: #1296db;
+}
+.high-line > .item > .item-name{
+  color: #1296db;
+}
+.high-line > .item > .item-ar {
+  color: #1296db;
+}

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{tracks}}">
+  <view class="top">
+    <view class="change" bindtap="change">
+      <label class="title">{{name}}</label>
+    </view>
+    <image class="image" src="{{coverImgUrl}}"></image>
+  </view>
+  <view class="content">
+
+      <my-list list="{{tracks}}" bind:handleTap="playSong" bind:handleMutil="handleMutil" bind:handlePlay="playSong"/>
+    <!-- <view class="list-wrapper">
+      <view class="list-item" bindtap="playSong"  wx:for="{{tracks}}"  wx:key="index" wx:for-item="item"  data-index="{{index}}" >
+        <view class="text-high">{{item.name}}</view>
+        <view class="text">{{item.ar[0].name}}</view>
+      </view>
+    </view> -->
+  </view>
+
+</view>

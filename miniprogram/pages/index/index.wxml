@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{!searchShow}}">
+  <view class="index" wx:if="{{show}}">
+    <view class="search-wrapper" bindtap="toggoleSearch">
+      <label class="search-icon iconfont iconsearch">
+      </label>
+    <label class="search-text">搜索</label>
+    </view>
+    <view class="hot-wrapper"  wx:for="{{hotList}}"  wx:key="index" wx:for-item="item">
+      <view class="title-wrapper">
+      {{item.title}} 
+      <label class="title-right" bindtap="toggoleSongSheet">
+      更多
+      <label class="title-right-icon"></label>
+      </label>
+      </view>
+      <song-sheet bind:handleTap="toggoleTracks" list="{{item.playList}}"/>
+    </view>
+    <view class="song-recommend" wx:if="{{songList}}">
+      <view class="title-wrapper">
+      歌曲推荐 <label class="title-right">更多<label class="title-right-icon"></label></label>
+      </view>
+      <view class="song-list-wrapper">
+        <song-list list="{{songList}}" mode="{{mode}}" bind:handleTap="playSong"/>
+      </view>
+      <view class="loading" bindtap="loadMore" >点击加载更多...</view>
+    </view>
+  </view>
+  <person-center wx:if="{{!show}}"/>
+  <tab-bar bind:myevent="onMyEvent" avatarUrl="{{userInfo.avatarUrl}}" play="{{play}}" songImgUrl="{{songImgUrl}}"/>
+</view>
+<serach bind:back="backEvent" wx:if="{{searchShow}}" animation="{{animation}}"/>

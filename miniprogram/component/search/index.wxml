@@ -1,0 +1,43 @@
+
+<view class="search-wrapper">
+  <view class="header">
+    <view class="search-bar" bindtap="inputFocus" style="width:{{width}}">
+      <label class="search-icon iconfont iconsearch">
+      </label>
+      <input bindconfirm="bindconfirm" placeholder="搜索音乐/歌曲/歌手" value="{{value}}" focus="{{focus}}" bindblur="bindblur"></input>
+      <label class="search-icon iconfont iconclear" bindtap="clear" wx:if="{{focus}}">
+      </label>
+    </view>
+    <view class="cancle" bindtap="cancle" wx:if="{{focus}}">
+      取消
+    </view>
+  </view>
+  <view class="hot-search" wx:if="{{!focus && !result}}">
+    <view class="title">
+      热门搜索
+    </view>
+    <view class="context">
+      <label class="context-item">突然想起你</label>
+      <label class="context-item">勇气</label>
+      <label class="context-item">阴天</label>
+      <label class="context-item">莫文蔚</label>
+      <label class="context-item">彩虹</label>
+      <label class="context-item">Look At Me Now</label>
+      <label class="context-item">父亲写的散文诗</label>
+      <label class="context-item">Once</label>
+    </view>
+  </view>
+  <view class="histroy-search" wx:if="{{!focus && !result}}">
+    <view class="title">
+      历史记录
+      <label class="iconfont title-icon icondelete" bindtap="delHistroy"></label>
+    </view>
+    <view class="context">
+      <label class="context-item" wx:for="{{hisList}}" wx:item="{{item}}" wx:key="{{index}}">{{item}}</label>
+    </view>
+  </view>
+  <my-list list="{{result}}" bind:handleTap="playSong" wx:if="{{result}}"/>
+  <label class="serach-back" bindtap="back">
+    返回
+  </label>
+</view>

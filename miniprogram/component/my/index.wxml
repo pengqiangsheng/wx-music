@@ -1,0 +1,34 @@
+
+<view class="my-wrapper">
+  <view class="my-top">
+     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <view class="user-wrapper">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <image class="filter-wrapper" src="bg.jpg"></image>
+    </block>
+  </view>
+  <view class="my-play-list">
+    <view class="recent-and-fav">
+      <view class="item {{selected === index ? 'active' : ''}}" bindtap="toggle"  wx:for="{{titleList}}" wx:key="{{index}}" data-index="{{index}}">
+        {{item.name}}
+        <label class="number">/{{item.number}}</label>
+      </view>
+    </view>
+    <view class="play-list-header">
+      <view class="toggole-bar">
+        <label class="iconfont iconbofang"></label>
+        全部播放
+      </view>
+      <view class="play-btn">
+        <label class="iconfont iconicon_loop"></label>
+        循环播放
+      </view>
+    </view>
+    <my-list list="{{songList}}"  bind:handleMutil="handleMutil" bind:handlePlay="playSong">
+      <view class="list-bottom"></view>
+    </my-list>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class="progress-wrapper" >
+  <view class="progress-main">
+    <view class="progress-fliter"></view>
+    <view class="progress-bar" style="width:{{width}}">
+      <label class="point"></label>
+    </view>
+  </view>
+</view>
+<slot></slot>

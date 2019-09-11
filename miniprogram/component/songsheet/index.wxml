@@ -1,0 +1,10 @@
+<view class="song-sheet-wrapper">
+  <view class="item-wrapper" bindtap="handleTap" wx:for="{{list}}"  wx:key="index" wx:for-item="item" data-index="{{index}}" data-item="{{item}}" >
+    <view class="image-wrapper">
+      <image src="{{item.coverImgUrl}}?param=100y100"></image>
+      <label class="play-count">{{item.playCount / 10000 | 0}}万</label>
+    </view>
+    <view class="text-high-hot">{{item.name}}</view>
+    <view class="text">{{item.ar.name}}</view>
+  </view>
+</view>

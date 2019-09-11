@@ -1,0 +1,13 @@
+<view class="sheet-wrapper">
+  <view class="header-wrapper">
+    <label class="item {{selected === index ? active : ''}}" bindtap="handleSheet"  wx:for="{{sheetNameList}}" wx:key="{{index}}" data-index="{{index}}">{{item.name}}</label>
+    <!-- <label class="item">华语</label>
+    <label class="item">流行</label>
+    <label class="item">民谣</label>
+    <label class="item">轻音乐</label> -->
+  </view>
+  <view class="body-wrapper"  bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd'>
+    <song-sheet bind:handleTap="toggoleTracks" list="{{songSheet}}"/>
+    <view class="loading" bindtap="loadMore" wx:if="{{songSheet}}">点击加载更多...</view>
+  </view>
+</view>

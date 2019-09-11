@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tab-bar": "../../component/TabBar/index",
+    "person-center": "../../component/my/index",
+    "serach":"../../component/search/index",
+    "song-sheet": "../../component/songsheet/index",
+    "song-list": "../../component/list/index"
+  }
+}

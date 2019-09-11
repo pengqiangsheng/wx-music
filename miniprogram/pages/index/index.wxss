@@ -1,0 +1,91 @@
+@import '../../style/iconfont.wxss';
+
+page {
+  background: rgb(245, 245, 245);
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+}
+.search-wrapper {
+  position: relative;
+  height: 60rpx;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.search-text {
+  font-size: 14px;
+  line-height: 60rpx;
+  color: rgba(46, 4, 4, 0.3);
+}
+.search-icon {
+  position: relative;
+  top: 1px;
+  right: 2px;
+  font-size: 16px;
+  color: rgba(46, 4, 4, 0.3);
+}
+
+.hot-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.title-wrapper {
+  position: relative;
+  color: #222;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: 10px 3px;
+}
+.title-right {
+  position: absolute;
+  top: 1px;
+  right: 12px;
+  font-size: 12px;
+  color: rgba(46, 4, 4, 0.3);
+}
+.title-right > .title-right-icon {
+  position: absolute;
+  top: 7px;
+  right: -7px;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid rgb(141, 141, 141);
+  border-right: 1px solid rgb(141, 141, 141);
+  transform: rotate(45deg);
+}
+
+.song-recommend {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.song-list-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.loading {
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 20px;
+  color: rgba(0, 0, 0, 0.8)
+}
+
+.my {
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+}
